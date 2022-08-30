@@ -1,4 +1,10 @@
-h1 {
-  color: rgb(212, 0, 0);
-  background-color: black;
+#destination-input {
+  display: flex;
+  flex-direction: column;
+  width: 500px;
+}
+
+#search-flights,
+#search-hotels {
+  flex-direction: row;
 }

@@ -1,26 +1,13 @@
-
 import * as React from 'react';
-import { hot } from "react-hot-loader/root";
-import Button from '@material-ui/core/Button';
-import { Box } from '@material-ui/core';
+import { hot } from 'react-hot-loader/root';
+import Itinerary from './pages/Itinerary';
 
 interface Props {
-   name:
-    string
+  name: string;
 }
 
-class App extends React.Component<Props> {
-  render() {
-    const { name } = this.props;
-    return (
-      <>
-        <h1>
-          Hello {name}
-        </h1>
-        <Button variant="contained">this is a material UI button</Button>
-      </>
-    );
-  }
-}
+const App: React.FC = () => {
+  return <Itinerary />;
+};
 
 export default hot(App);
