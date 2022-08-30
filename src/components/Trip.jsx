@@ -7,9 +7,9 @@ import TripHotel from './TripHotel';
 import TripRestaurant from './TripRestaurant';
 import TripAttraction from './TripAttraction';
 
-const Trip: React.FC = () => {
+const Trip = () => {
   return (
-    <div>
+    <div className='trip'>
       <TripLocation />
       <TripDate />
       <TripFlight />

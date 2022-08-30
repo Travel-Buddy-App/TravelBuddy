@@ -7,7 +7,7 @@ import SearchRestaurants from './SearchRestaurants';
 import SearchAttractions from './SearchAttractions';
 import AddItineraryButton from './AddItineraryButton';
 
-const DestinationInput: React.FC = () => {
+const DestinationInput = () => {
   return (
     <div id='destination-input'>
       <LocationInput />

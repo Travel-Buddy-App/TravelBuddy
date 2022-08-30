@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-const LogOutButton: React.FC = () => {
+const LogOutButton = () => {
   return <button>Log Out</button>;
 };
 

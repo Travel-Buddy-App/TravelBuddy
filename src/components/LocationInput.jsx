@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-const LocationInput: React.FC = () => {
+const LocationInput = () => {
   return <input type='text' placeholder='Location' />;
 };
 

@@ -1,12 +1,14 @@
 import * as React from 'react';
 
 import DestinationInput from '../components/DestinationInput';
+import Trip from '../components/Trip';
 import LogOutButton from '../components/LogOutButton';
 
-const Itinerary: React.FC = () => {
+const Itinerary = () => {
   return (
-    <div>
+    <div id='itinerary'>
       <LogOutButton />
+      <Trip />
       <DestinationInput />
     </div>
   );

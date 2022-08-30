@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-const AddItineraryButton: React.FC = () => {
+const AddItineraryButton = () => {
   return <button>Add Itinerary</button>;
 };
 
