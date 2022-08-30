@@ -8,15 +8,16 @@ const app = express();
 
 const PORT = 3000; 
 
-const userRouter = require('./routes/user.ts');
-const itineraryRouter = require('./routes/itinerary.ts');
+const userRouter = require('./routes/user.js');
+const itineraryRouter = require('./routes/itinerary.js');
+const eventRouter = require();
 
 // need to determine how we are parsing data
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 // serve static file
-app.use('/', express.static(path.join(__dirname, '../index.html'))); 
+app.use('/', express.static(path.join(__dirname, '../src/index.html'))); 
 
 //serve static css file 
 app.use('/', express.static(path.join(__dirname, '../src/styles.css')));
@@ -28,7 +29,10 @@ app.use('/', express.static(path.join(__dirname, '../src/index.tsx')));
 app.use('/user', userRouter);
 
 // itinerary router
-app.post('/user/:user_id/itinerary', itineraryRouter);
+app.use('/user/:user_id/itinerary', itineraryRouter);
+
+// event router 
+app.use('/user/:user_id/itinerary/:itinerary_id/:event_id', eventRouter);
 
 // 404 Error handler 
 app.use((req, res) => {

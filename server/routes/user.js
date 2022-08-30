@@ -1,7 +1,8 @@
 const express = require('express');
 
-const router = express.Router();
+const userController = require('../controllers/userController');
 
+const router = express.Router();
 
 //create a new user 
 router.post('/', userController.createUser, (req, res) => {
@@ -10,7 +11,9 @@ router.post('/', userController.createUser, (req, res) => {
 
 // retrieve a specific user profile page to display
 //check cookies?
-router.get('/:user_id', ); 
+router.get('/:user_id', 
+//add middleware here
+(req, res) => {return res.status(200)});
 
 // add information to a specific user's profile page 
 //remember to check cookies
