@@ -2,7 +2,7 @@ import * as React from 'react';
 import MUIModal from '@material-ui/core/Modal';
 import Box from '@material-ui/core/Box';
 
-const Modal = ({ open, onClose }) => {
+const Modal = ({ open, onClose, data }) => {
   return (
     <MUIModal
       open={open}

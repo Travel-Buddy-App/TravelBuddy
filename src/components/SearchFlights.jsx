@@ -15,6 +15,12 @@ const SearchFlights = () => {
 
   const handleClick = () => (open ? setOpen(false) : setOpen(true));
 
+  const testData = [
+    ['Flight 1', 'start', 'end'],
+    ['Flight 2', 'start', 'end'],
+    ['Flight 3', 'start', 'end'],
+  ];
+
   return (
     <div id='search-flights'>
       <label htmlFor='flight-departure'>Departure</label>
@@ -34,7 +40,7 @@ const SearchFlights = () => {
         onChange={(e) => setReturnDate(e.target.value)}
       />
       <Button onClick={handleClick} text='Search Flights' />
-      <Modal open={open} onClose={handleClick} />
+      <Modal open={open} onClose={handleClick} data={testData} />
     </div>
   );
 };

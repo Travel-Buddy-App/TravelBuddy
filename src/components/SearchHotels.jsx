@@ -1,6 +1,8 @@
 import * as React from 'react';
+import { Box } from '@material-ui/core';
 import Button from './Button';
-import Modal from './Modal';
+
+import HotelData from './HotelData';
 
 const SearchHotels = () => {
   const TODAY = new Date();
@@ -15,27 +17,122 @@ const SearchHotels = () => {
 
   const handleClick = () => (open ? setOpen(false) : setOpen(true));
 
+  const data = [
+    {
+      hotelName: 'Hotel 1',
+      checkIn: 'Check In',
+      checkOut: 'Check Out',
+      price: 'Price',
+    },
+    {
+      hotelName: 'Hotel 2',
+      checkIn: 'Check In',
+      checkOut: 'Check Out',
+      price: 'Price',
+    },
+    {
+      hotelName: 'Hotel 3',
+      checkIn: 'Check In',
+      checkOut: 'Check Out',
+      price: 'Price',
+    },
+    {
+      hotelName: 'Hotel 3',
+      checkIn: 'Check In',
+      checkOut: 'Check Out',
+      price: 'Price',
+    },
+    {
+      hotelName: 'Hotel 3',
+      checkIn: 'Check In',
+      checkOut: 'Check Out',
+      price: 'Price',
+    },
+    {
+      hotelName: 'Hotel 3',
+      checkIn: 'Check In',
+      checkOut: 'Check Out',
+      price: 'Price',
+    },
+    {
+      hotelName: 'Hotel 3',
+      checkIn: 'Check In',
+      checkOut: 'Check Out',
+      price: 'Price',
+    },
+    {
+      hotelName: 'Hotel 3',
+      checkIn: 'Check In',
+      checkOut: 'Check Out',
+      price: 'Price',
+    },
+    {
+      hotelName: 'Hotel 3',
+      checkIn: 'Check In',
+      checkOut: 'Check Out',
+      price: 'Price',
+    },
+    {
+      hotelName: 'Hotel 3',
+      checkIn: 'Check In',
+      checkOut: 'Check Out',
+      price: 'Price',
+    },
+    {
+      hotelName: 'Hotel 3',
+      checkIn: 'Check In',
+      checkOut: 'Check Out',
+      price: 'Price',
+    },
+    {
+      hotelName: 'Hotel 3',
+      checkIn: 'Check In',
+      checkOut: 'Check Out',
+      price: 'Price',
+    },
+    {
+      hotelName: 'Hotel 3',
+      checkIn: 'Check In',
+      checkOut: 'Check Out',
+      price: 'Price',
+    },
+  ];
+
   return (
-    <div id='search-hotels'>
-      <label htmlFor='hotel-check-in'>Check In</label>
-      <input
-        value={checkIn}
-        type='date'
-        id='hotel-check-in'
-        min={TODAY_FORMATTED}
-        onChange={(e) => setCheckIn(e.target.value)}
-      />
-      <label htmlFor='hotel-check-out'>Check Out</label>
-      <input
-        value={checkOut}
-        type='date'
-        id='hotel-check-out'
-        min={TOMORROW_FORMATTED}
-        onChange={(e) => setCheckOut(e.target.value)}
-      />
-      <Button onClick={handleClick} text='Search Hotels' />
-      <Modal open={open} onClose={handleClick} />
-    </div>
+    <>
+      <Box
+        id='search-hotels'
+        sx={{
+          display: 'flex',
+          flexDirection: 'row',
+          justifyContent: 'space-between',
+          alignItems: 'center',
+        }}
+      >
+        <Box>
+          <label htmlFor='hotel-check-in'>Check In</label>
+          <input
+            value={checkIn}
+            type='date'
+            id='hotel-check-in'
+            min={TODAY_FORMATTED}
+            onChange={(e) => setCheckIn(e.target.value)}
+          />
+          <label htmlFor='hotel-check-out'>Check Out</label>
+          <input
+            value={checkOut}
+            type='date'
+            id='hotel-check-out'
+            min={TOMORROW_FORMATTED}
+            onChange={(e) => setCheckOut(e.target.value)}
+          />
+        </Box>
+        <Box>
+          <Button onClick={handleClick} text='Search Hotels' />
+        </Box>
+      </Box>
+      {open ? <HotelData data={data} /> : null}
+    </>
   );
 };
 
