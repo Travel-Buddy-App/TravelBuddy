@@ -4,7 +4,7 @@ import Button from './Button';
 
 import HotelData from './HotelData';
 
-const SearchHotels = () => {
+const SearchHotels = ({ location }) => {
   const TODAY = new Date();
   const TODAY_FORMATTED = TODAY.toLocaleDateString('en-ca');
   const TOMORROW = new Date(TODAY);
@@ -15,85 +15,34 @@ const SearchHotels = () => {
   const [checkIn, setCheckIn] = React.useState(TODAY_FORMATTED);
   const [checkOut, setCheckOut] = React.useState(TOMORROW_FORMATTED);
 
-  const handleClick = () => (open ? setOpen(false) : setOpen(true));
+  const handleClick = () => {
+    open ? setOpen(false) : setOpen(true);
+    // FETCH DATA BASED ON LOCATION
+  };
 
   const data = [
     {
+      hotelPic: 'Pic',
       hotelName: 'Hotel 1',
-      checkIn: 'Check In',
-      checkOut: 'Check Out',
+      hotelAddress: 'Address',
       price: 'Price',
     },
     {
+      hotelPic: 'Pic',
       hotelName: 'Hotel 2',
-      checkIn: 'Check In',
-      checkOut: 'Check Out',
+      hotelAddress: 'Address',
       price: 'Price',
     },
     {
+      hotelPic: 'Pic',
       hotelName: 'Hotel 3',
-      checkIn: 'Check In',
-      checkOut: 'Check Out',
+      hotelAddress: 'Address',
       price: 'Price',
     },
     {
-      hotelName: 'Hotel 3',
-      checkIn: 'Check In',
-      checkOut: 'Check Out',
-      price: 'Price',
-    },
-    {
-      hotelName: 'Hotel 3',
-      checkIn: 'Check In',
-      checkOut: 'Check Out',
-      price: 'Price',
-    },
-    {
-      hotelName: 'Hotel 3',
-      checkIn: 'Check In',
-      checkOut: 'Check Out',
-      price: 'Price',
-    },
-    {
-      hotelName: 'Hotel 3',
-      checkIn: 'Check In',
-      checkOut: 'Check Out',
-      price: 'Price',
-    },
-    {
-      hotelName: 'Hotel 3',
-      checkIn: 'Check In',
-      checkOut: 'Check Out',
-      price: 'Price',
-    },
-    {
-      hotelName: 'Hotel 3',
-      checkIn: 'Check In',
-      checkOut: 'Check Out',
-      price: 'Price',
-    },
-    {
-      hotelName: 'Hotel 3',
-      checkIn: 'Check In',
-      checkOut: 'Check Out',
-      price: 'Price',
-    },
-    {
-      hotelName: 'Hotel 3',
-      checkIn: 'Check In',
-      checkOut: 'Check Out',
-      price: 'Price',
-    },
-    {
-      hotelName: 'Hotel 3',
-      checkIn: 'Check In',
-      checkOut: 'Check Out',
-      price: 'Price',
-    },
-    {
-      hotelName: 'Hotel 3',
-      checkIn: 'Check In',
-      checkOut: 'Check Out',
+      hotelPic: 'Pic',
+      hotelName: 'Hotel 4',
+      hotelAddress: 'Address',
       price: 'Price',
     },
   ];

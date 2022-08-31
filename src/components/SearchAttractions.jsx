@@ -1,16 +1,26 @@
 import * as React from 'react';
+import { Box } from '@material-ui/core';
+
 import Button from './Button';
-import Modal from './Modal';
+import AttractionData from './AttractionData';
 
 const SearchAttractions = () => {
   const [open, setOpen] = React.useState(false);
   const handleClick = () => (open ? setOpen(false) : setOpen(true));
 
+  const data = [
+    {
+      attractionPic: 'Pic',
+      attractionName: 'Name',
+      attractionAddress: 'Address',
+    },
+  ];
+
   return (
-    <div>
+    <Box>
       <Button onClick={handleClick} text='Search Attractions' />
-      <Modal open={open} onClose={handleClick} />
-    </div>
+      {open ? <AttractionData data={data} /> : null}
+    </Box>
   );
 };
 

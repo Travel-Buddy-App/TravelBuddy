@@ -10,11 +10,14 @@ const HotelData = ({ data }) => {
       style={{ border: '1px solid black', height: '300px', overflow: 'scroll' }}
     >
       {data.map((datum, i) => (
-        <Box key={89289012 * i}>
+        <Box
+          key={89289012 * i}
+          sx={{ display: 'flex', justifyContent: 'space-between' }}
+        >
+          <Box>{datum.hotelPic}</Box>
           <strong>{datum.hotelName}</strong>
-          {datum.checkIn}
-          {datum.checkOut}
-          {datum.price}
+          <Box>{datum.hotelAddress}</Box>
+          <Box>{datum.price}</Box>
 
           <Button text='Add Hotel' />
         </Box>

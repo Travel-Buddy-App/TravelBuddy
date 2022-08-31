@@ -8,10 +8,10 @@ import LogOutButton from '../components/LogOutButton';
 const Itinerary = () => {
   return (
     <Grid container spacing={8} id='itinerary-page'>
-      <Grid item xs={8}>
+      <Grid item xs={6}>
         <Trip />
       </Grid>
-      <Grid item xs={4}>
+      <Grid item xs={6}>
         <DestinationInput />
       </Grid>
     </Grid>

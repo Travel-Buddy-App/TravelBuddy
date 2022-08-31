@@ -3,27 +3,26 @@ import Box from '@material-ui/core/Box';
 
 import Button from './Button';
 
-const RestaurantData = ({ data }) => {
+const AttractionData = ({ data }) => {
   return (
     <Box
-      id='restaurant-data'
+      id='attraction-data'
       style={{ border: '1px solid black', height: '300px', overflow: 'scroll' }}
     >
       {data.map((datum, i) => (
         <Box
-          key={765432 * i}
+          key={3452345 * i}
           sx={{ display: 'flex', justifyContent: 'space-between' }}
         >
-          <Box>{datum.restaurantPic}</Box>
-          <strong>{datum.restaurantName}</strong>
-          <Box>{datum.restaurantAddress}</Box>
-          <Box>{datum.restaurantCuisine}</Box>
+          <Box>{datum.attractionPic}</Box>
+          <strong>{datum.attractionName}</strong>
+          <Box>{datum.attractionAddress}</Box>
 
-          <Button text='Add Restaurant' />
+          <Button text='Add Attraction' />
         </Box>
       ))}
     </Box>
   );
 };
 
-export default RestaurantData;
+export default AttractionData;
