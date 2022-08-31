@@ -30,7 +30,11 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-hot-loader": "^4.13.0"
-  },
+    "@material-ui/lab": "^4.0.0-alpha.61",
+    "@mui/icons-material": "^5.10.3",
+    "fontsource-roboto": "^4.0.0",
+    "react-router-dom": "^6.3.0"
+},
   "devDependencies": {
     "@babel/core": "^7.18.13",
     "@babel/preset-env": "^7.18.10",
