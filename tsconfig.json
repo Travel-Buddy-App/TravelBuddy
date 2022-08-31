@@ -2,14 +2,15 @@
     "compilerOptions": {
         "outDir": "./dist/",
         "sourceMap": true,
-        "strict": true,
-        "noImplicitReturns": true,
-        "noImplicitAny": true,
+        "strict": false,
+        "noImplicitReturns": false,
+        "noImplicitAny": false,
         "module": "es6",
         "moduleResolution": "node",
         "target": "es5",
+        "checkJs": false,
         "allowJs": true,
-        "jsx": "react",
+        "jsx": "react-jsx",
     },
     "include": [
         "./src/**/*"
