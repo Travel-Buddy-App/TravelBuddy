@@ -10,7 +10,7 @@ const pool = new Pool({
 /* CREATE TABLE users(
 user_id SERIAL PRIMARY KEY, 
 username VARCHAR(50), 
-password VARCHAR(50),
+password VARCHAR(150),
 email VARCHAR(50), 
 profile_pic bytea
 ); */

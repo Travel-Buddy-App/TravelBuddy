@@ -1,11 +1,14 @@
-const express = require('express');
+// const express = require('express');
 
-const eventController = require('../controllers/eventController');
+// const eventController = require('../controllers/eventController.js');
 
-const router = express.Router();
+// const router = express.Router();
 
-router.get();
+// // router.get();
 
-router.post();
+// // router.post();
 
-router.d
+// // router.d
+
+// // EXPORT THE ROUTER
+// module.exports = router;
