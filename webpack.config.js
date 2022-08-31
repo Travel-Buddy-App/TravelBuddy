@@ -1,38 +1,22 @@
-const webpack = require('webpack');
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 const config = {
-  entry: [
-    'react-hot-loader/patch',
-    './src/index.tsx'
-  ],
+  entry: ['./src/index.jsx'],
   output: {
     path: path.resolve(__dirname, 'dist'),
-    filename: 'bundle.js'
+    filename: 'bundle.js',
   },
   module: {
     rules: [
       {
         test: /\.(js|jsx)$/,
         use: 'babel-loader',
-        exclude: /node_modules/
+        exclude: /node_modules/,
       },
       {
         test: /\.css$/,
-        use: [
-          'style-loader',
-          'css-loader'
-        ]
-      },
-      {
-        test: /\.ts(x)?$/,
-        loader: 'ts-loader',
-        exclude: /node_modules/
-      },
-      {
-        test: /\.svg$/,
-        use: 'file-loader'
+        use: ['style-loader', 'css-loader'],
       },
       {
         test: /\.png$/,
@@ -40,34 +24,33 @@ const config = {
           {
             loader: 'url-loader',
             options: {
-              mimetype: 'image/png'
-            }
-          }
-        ]
-      }
-    ]
-  },
-  devServer: {
-    'static': {
-      directory: './dist'
-    }
+              mimetype: 'image/png',
+            },
+          },
+        ],
+      },
+      {
+        test: /\.svg$/,
+        use: 'file-loader',
+      },
+    ],
   },
   plugins: [
     new HtmlWebpackPlugin({
-      templateContent: ({ htmlWebpackPlugin }) => '<!DOCTYPE html><html><head><meta charset=\"utf-8\"><title>' + htmlWebpackPlugin.options.title + '</title></head><body><div id=\"app\"></div></body></html>',
+      template: './src/index.html',
       filename: 'index.html',
-    })
+    }),
   ],
+  devServer: {
+    host: 'localhost',
+    port: 8080,
+    static: {
+      directory: path.join(__dirname, 'dist'),
+    },
+  },
   resolve: {
-    extensions: [
-      '.tsx',
-      '.ts',
-      '.js'
-    ],
-    alias: {
-      'react-dom': '@hot-loader/react-dom'
-    }
-  }
+    extensions: ['*', '.js', '.jsx'],
+  },
 };
 
 module.exports = config;
