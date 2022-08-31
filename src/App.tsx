@@ -6,7 +6,7 @@ import { Box } from '@material-ui/core';
 import { grey } from '@material-ui/core/colors';
 import UserLogin from './Components/UserLogin';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-
+import Itinerary from './Pages/itinerary';
 
 function App () {
 
@@ -32,19 +32,32 @@ function App () {
   if(!loginAccount){
     return (
       <>
-        <Box border = {1} borderColor = {"black"} width = {'50%'} height = {'50%'} display="flex" justifyContent={"center"} alignItems={"center"} marginTop={'25%'} marginLeft={'25%'} color={'white'}>
-          <UserLogin {...props} />
-        </Box>
+        <BrowserRouter>
+         <Routes>
+           <Route path='/' element={
+             <Box border = {1} borderColor = {"black"} width = {'50%'} height = {'50%'} display="flex" justifyContent={"center"} alignItems={"center"} marginTop={'25%'} marginLeft={'25%'} color={'white'}>
+             <UserLogin {...props} />
+           </Box>
+           }></Route>
+          </Routes>
+        </BrowserRouter>
       </>
     );
   }
   else{
     return (
       <>
-        <Box border = {1} borderColor = {grey} width = {'50%'} height = {'50%'} display="flex" flexDirection={'column'} justifyContent={"center"} alignItems={"center"} marginTop={'25%'} marginLeft={'25%'}>
-          <h1>Your Itineraries</h1>
-          <Box> Itinerary 1 <Button> Go to this Itinerary </Button></Box>
-        </Box>
+        <BrowserRouter>
+          <Routes>
+          <Route path='/' element={
+            <Box border = {1} borderColor = {grey} width = {'50%'} height = {'50%'} display="flex" flexDirection={'column'} justifyContent={"center"} alignItems={"center"} marginTop={'25%'} marginLeft={'25%'}>
+              <h1>Your Itineraries</h1>
+              <Box> Itinerary 1 <Button> Go to this Itinerary </Button></Box>
+            </Box>
+          }></Route>
+          <Route path="itinerary" element={<Itinerary/>}/>
+          </Routes>
+        </BrowserRouter>
       </>
     );
   }
